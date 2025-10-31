@@ -1,9 +1,8 @@
 /*! ----------------------------------------------------------------------------
- *  @file    deca_param_types.h
- *  @brief   Decawave general type definitions for configuration structures
+ * @file    deca_param_types.h
+ * @brief   Decawave general type definitions for configuration structures
  *
- * @attention
- *
+ * @copyright
  * Copyright 2013 (c) Decawave Ltd, Dublin, Ireland.
  *
  * All rights reserved.
@@ -15,7 +14,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include "deca_types.h"
+
+#include <stdint.h>
 
 #define NUM_BR 3
 #define NUM_PRF 2
@@ -28,26 +28,26 @@ extern "C" {
 
 
 typedef struct {
-    uint32 lo32;
-    uint16 target[NUM_PRF];
+    uint32_t lo32;
+    uint16_t target[NUM_PRF];
 } agc_cfg_struct ;
 
 extern const agc_cfg_struct agc_config ;
 
 //SFD threshold settings for 110k, 850k, 6.8Mb standard and non-standard
-extern const uint16 sftsh[NUM_BR][NUM_SFD];
+extern const uint16_t sftsh[NUM_BR][NUM_SFD];
 
-extern const uint16 dtune1[NUM_PRF];
+extern const uint16_t dtune1[NUM_PRF];
 
 #define XMLPARAMS_VERSION   (1.17f)
 
-extern const uint32 fs_pll_cfg[NUM_CH];
-extern const uint8 fs_pll_tune[NUM_CH];
-extern const uint8 rx_config[NUM_BW];
-extern const uint32 tx_config[NUM_CH];
-extern const uint8 dwnsSFDlen[NUM_BR]; //length of SFD for each of the bitrates
-extern const uint32 digital_bb_config[NUM_PRF][NUM_PACS];
-extern const uint8 chan_idx[NUM_CH_SUPPORTED];
+extern const uint32_t fs_pll_cfg[NUM_CH];
+extern const uint8_t fs_pll_tune[NUM_CH];
+extern const uint8_t rx_config[NUM_BW];
+extern const uint32_t tx_config[NUM_CH];
+extern const uint8_t dwnsSFDlen[NUM_BR]; //length of SFD for each of the bitrates
+extern const uint32_t digital_bb_config[NUM_PRF][NUM_PACS];
+extern const uint8_t chan_idx[NUM_CH_SUPPORTED];
 
 #define TEMP_COMP_FACTOR_CH2 (327) //(INT) (0.0798 * 4096)
 #define TEMP_COMP_FACTOR_CH5 (607) //(INT) (0.1482 * 4096)
@@ -69,12 +69,10 @@ extern const uint8 chan_idx[NUM_CH_SUPPORTED];
 #define LDE_PARAM3_16 (0x1607)
 #define LDE_PARAM3_64 (0x0607)
 
-extern const uint16 lde_replicaCoeff[PCODES];
+extern const uint16_t lde_replicaCoeff[PCODES];
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif
-
-

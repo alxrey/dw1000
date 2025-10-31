@@ -1,0 +1,38 @@
+# Copyright (c) 2025 Swiss Timing Ltd.
+
+description: Qorvo DW1000 802.15.4 UWB transceiver
+
+compatible: "qorvo,dw1000"
+
+include: spi-device.yaml
+
+properties:
+  int-gpios:
+    type: phandle-array
+    required: true
+    description: Interrupt pin IRQ, active high.
+
+  reset-gpios:
+    type: phandle-array
+    required: true
+    description: RESET pin, active low.
+
+  wakeup-gpios:
+    type: phandle-array
+    description: WAKEUP pin, active high.
+
+  rxokled-gpios:
+    type: phandle-array
+    description: RX OK LED pin, active high.
+
+  sfdled-gpios:
+    type: phandle-array
+    description: SFD LED pin, active high.
+
+  rxled-gpios:
+    type: phandle-array
+    description: RX LED pin, active high.
+
+  txled-gpios:
+    type: phandle-array
+    description: TX LED pin, active high.

@@ -1,9 +1,8 @@
 /*! ----------------------------------------------------------------------------
- *  @file    deca_params_init.c
- *  @brief   DW1000 configuration parameters
+ * @file    deca_params_init.c
+ * @brief   DW1000 configuration parameters
  *
- * @attention
- *
+ * @copyright
  * Copyright 2013 (c) Decawave Ltd, Dublin, Ireland.
  *
  * All rights reserved.
@@ -13,19 +12,19 @@
 **/
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #include "deca_regs.h"
-#include "deca_device_api.h"
 #include "deca_param_types.h"
 
 
 //-----------------------------------------
 // map the channel number to the index in the configuration arrays below
 // 0th element is chan 1, 1st is chan 2, 2nd is chan 3, 3rd is chan 4, 4th is chan 5, 5th is chan 7
-const uint8 chan_idx[NUM_CH_SUPPORTED] = {0, 0, 1, 2, 3, 4, 0, 5};
+const uint8_t chan_idx[NUM_CH_SUPPORTED] = {0, 0, 1, 2, 3, 4, 0, 5};
 
 //-----------------------------------------
-const uint32 tx_config[NUM_CH] =
+const uint32_t tx_config[NUM_CH] =
 {
     RF_TXCTRL_CH1,
     RF_TXCTRL_CH2,
@@ -36,7 +35,7 @@ const uint32 tx_config[NUM_CH] =
 };
 
 //Frequency Synthesiser - PLL configuration
-const uint32 fs_pll_cfg[NUM_CH] =
+const uint32_t fs_pll_cfg[NUM_CH] =
 {
     FS_PLLCFG_CH1,
     FS_PLLCFG_CH2,
@@ -47,7 +46,7 @@ const uint32 fs_pll_cfg[NUM_CH] =
 };
 
 //Frequency Synthesiser - PLL tuning
-const uint8 fs_pll_tune[NUM_CH] =
+const uint8_t fs_pll_tune[NUM_CH] =
 {
     FS_PLLTUNE_CH1,
     FS_PLLTUNE_CH2,
@@ -58,7 +57,7 @@ const uint8 fs_pll_tune[NUM_CH] =
 };
 
 //bandwidth configuration
-const uint8 rx_config[NUM_BW] =
+const uint8_t rx_config[NUM_BW] =
 {
     RF_RXCTRLH_NBW,
     RF_RXCTRLH_WBW
@@ -72,7 +71,7 @@ const agc_cfg_struct agc_config =
 };
 
 //DW non-standard SFD length for 110k, 850k and 6.81M
-const uint8 dwnsSFDlen[NUM_BR] =
+const uint8_t dwnsSFDlen[NUM_BR] =
 {
     DW_NS_SFD_LEN_110K,
     DW_NS_SFD_LEN_850K,
@@ -80,7 +79,7 @@ const uint8 dwnsSFDlen[NUM_BR] =
 };
 
 // SFD Threshold
-const uint16 sftsh[NUM_BR][NUM_SFD] =
+const uint16_t sftsh[NUM_BR][NUM_SFD] =
 {
     {
         DRX_TUNE0b_110K_STD,
@@ -96,13 +95,13 @@ const uint16 sftsh[NUM_BR][NUM_SFD] =
     }
 };
 
-const uint16 dtune1[NUM_PRF] =
+const uint16_t dtune1[NUM_PRF] =
 {
     DRX_TUNE1a_PRF16,
     DRX_TUNE1a_PRF64
 };
 
-const uint32 digital_bb_config[NUM_PRF][NUM_PACS] =
+const uint32_t digital_bb_config[NUM_PRF][NUM_PACS] =
 {
     {
         DRX_TUNE2_PRF16_PAC8,
@@ -118,7 +117,7 @@ const uint32 digital_bb_config[NUM_PRF][NUM_PACS] =
     }
 };
 
-const uint16 lde_replicaCoeff[PCODES] =
+const uint16_t lde_replicaCoeff[PCODES] =
 {
     0, // No preamble code 0
     LDE_REPC_PCODE_1,
@@ -146,7 +145,3 @@ const uint16 lde_replicaCoeff[PCODES] =
     LDE_REPC_PCODE_23,
     LDE_REPC_PCODE_24
 };
-
-
-
-
