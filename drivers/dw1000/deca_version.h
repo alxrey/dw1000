@@ -2,8 +2,7 @@
  * @file    deca_version.h
  * @brief   Defines the version info for the DW1000 device driver including its API
  *
- * @attention
- *
+ * @copyright
  * Copyright 2013 (c) Decawave Ltd, Dublin, Ireland.
  *
  * All rights reserved.
